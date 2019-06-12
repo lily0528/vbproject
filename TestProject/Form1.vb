@@ -1,9 +1,6 @@
 ﻿Imports System.Data.OleDb
 Imports System.Data
 
-
-
-
 Public Class Form1
     Dim connection As New OleDbConnection(My.Settings.UserManagementConnectionString)
 
@@ -21,6 +18,7 @@ Public Class Form1
             Dim count = Convert.ToInt32(cmd.ExecuteScalar())
             If (count > 0) Then
                 MsgBox("Login succeed!", MsgBoxStyle.Information)
+                connection.Close()
                 Form2.Show()
                 Me.Hide()
             Else

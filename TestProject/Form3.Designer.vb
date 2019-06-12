@@ -40,6 +40,11 @@ Partial Class Form3
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Lable7 = New System.Windows.Forms.Label()
         Me.Phone = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.Label8 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -55,7 +60,7 @@ Partial Class Form3
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(119, 104)
+        Me.Label2.Location = New System.Drawing.Point(119, 87)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(76, 17)
         Me.Label2.TabIndex = 1
@@ -64,7 +69,7 @@ Partial Class Form3
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(119, 157)
+        Me.Label3.Location = New System.Drawing.Point(119, 125)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(76, 17)
         Me.Label3.TabIndex = 2
@@ -73,7 +78,7 @@ Partial Class Form3
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(119, 210)
+        Me.Label4.Location = New System.Drawing.Point(119, 242)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(46, 17)
         Me.Label4.TabIndex = 3
@@ -82,7 +87,7 @@ Partial Class Form3
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(122, 299)
+        Me.Label5.Location = New System.Drawing.Point(122, 331)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(64, 17)
         Me.Label5.TabIndex = 4
@@ -90,42 +95,42 @@ Partial Class Form3
         '
         'FirstName
         '
-        Me.FirstName.Location = New System.Drawing.Point(199, 49)
+        Me.FirstName.Location = New System.Drawing.Point(211, 49)
         Me.FirstName.Name = "FirstName"
         Me.FirstName.Size = New System.Drawing.Size(241, 22)
         Me.FirstName.TabIndex = 5
         '
         'LastName
         '
-        Me.LastName.Location = New System.Drawing.Point(199, 104)
+        Me.LastName.Location = New System.Drawing.Point(211, 87)
         Me.LastName.Name = "LastName"
         Me.LastName.Size = New System.Drawing.Size(241, 22)
         Me.LastName.TabIndex = 6
         '
         'NickName
         '
-        Me.NickName.Location = New System.Drawing.Point(199, 157)
+        Me.NickName.Location = New System.Drawing.Point(211, 125)
         Me.NickName.Name = "NickName"
         Me.NickName.Size = New System.Drawing.Size(241, 22)
         Me.NickName.TabIndex = 7
         '
         'Email
         '
-        Me.Email.Location = New System.Drawing.Point(199, 210)
+        Me.Email.Location = New System.Drawing.Point(211, 242)
         Me.Email.Name = "Email"
         Me.Email.Size = New System.Drawing.Size(241, 22)
         Me.Email.TabIndex = 8
         '
         'Address
         '
-        Me.Address.Location = New System.Drawing.Point(199, 293)
+        Me.Address.Location = New System.Drawing.Point(211, 325)
         Me.Address.Name = "Address"
         Me.Address.Size = New System.Drawing.Size(241, 22)
         Me.Address.TabIndex = 9
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(137, 363)
+        Me.Button1.Location = New System.Drawing.Point(122, 390)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(135, 38)
         Me.Button1.TabIndex = 10
@@ -134,7 +139,7 @@ Partial Class Form3
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(386, 363)
+        Me.Button2.Location = New System.Drawing.Point(351, 390)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(136, 38)
         Me.Button2.TabIndex = 11
@@ -173,7 +178,7 @@ Partial Class Form3
         'Lable7
         '
         Me.Lable7.AutoSize = True
-        Me.Lable7.Location = New System.Drawing.Point(119, 256)
+        Me.Lable7.Location = New System.Drawing.Point(119, 288)
         Me.Lable7.Name = "Lable7"
         Me.Lable7.Size = New System.Drawing.Size(53, 17)
         Me.Lable7.TabIndex = 15
@@ -181,16 +186,68 @@ Partial Class Form3
         '
         'Phone
         '
-        Me.Phone.Location = New System.Drawing.Point(199, 256)
+        Me.Phone.Location = New System.Drawing.Point(211, 288)
         Me.Phone.Name = "Phone"
         Me.Phone.Size = New System.Drawing.Size(241, 22)
         Me.Phone.TabIndex = 16
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(119, 209)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(60, 17)
+        Me.Label7.TabIndex = 17
+        Me.Label7.Text = "Gender:"
+        '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Location = New System.Drawing.Point(211, 209)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(59, 21)
+        Me.RadioButton1.TabIndex = 18
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "Male"
+        Me.RadioButton1.UseVisualStyleBackColor = True
+        '
+        'RadioButton2
+        '
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Location = New System.Drawing.Point(351, 209)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(75, 21)
+        Me.RadioButton2.TabIndex = 19
+        Me.RadioButton2.TabStop = True
+        Me.RadioButton2.Text = "Female"
+        Me.RadioButton2.UseVisualStyleBackColor = True
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Location = New System.Drawing.Point(211, 167)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(241, 22)
+        Me.DateTimePicker1.TabIndex = 20
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(119, 167)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(91, 17)
+        Me.Label8.TabIndex = 21
+        Me.Label8.Text = "Date of Birth:"
         '
         'Form3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.DateTimePicker1)
+        Me.Controls.Add(Me.RadioButton2)
+        Me.Controls.Add(Me.RadioButton1)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Phone)
         Me.Controls.Add(Me.Lable7)
         Me.Controls.Add(Me.Label6)
@@ -233,4 +290,9 @@ Partial Class Form3
     Friend WithEvents Label6 As Label
     Friend WithEvents Lable7 As Label
     Friend WithEvents Phone As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents RadioButton2 As RadioButton
+    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents Label8 As Label
 End Class

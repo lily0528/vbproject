@@ -112,9 +112,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UserManagementDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="UserManagementDataSet.vb">
-      <DependentUpon>UserManagementDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="UserManagementDataSet1.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
