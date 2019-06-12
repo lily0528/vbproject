@@ -24,6 +24,7 @@ Public Class Form3
             MsgBox("Please fill those details!")
         End If
 
+
         provider = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source="
         dataFile = "D:\InterViewTest\TestProject\TestProject\UserManagement.mdb"
         connString = provider & dataFile
@@ -52,7 +53,6 @@ Public Class Form3
             Address.Clear()
         Catch ex As Exception
             MsgBox(ex.Message)
-
         End Try
     End Sub
 
