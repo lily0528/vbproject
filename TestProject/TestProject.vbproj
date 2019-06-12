@@ -117,6 +117,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UserManagementDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="UserManagementDataSet2.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserManagementDataSet2.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
@@ -167,6 +172,17 @@
     </None>
     <None Include="UserManagementDataSet1.xss">
       <DependentUpon>UserManagementDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="UserManagementDataSet2.xsc">
+      <DependentUpon>UserManagementDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="UserManagementDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UserManagementDataSet2.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UserManagementDataSet2.xss">
+      <DependentUpon>UserManagementDataSet2.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
