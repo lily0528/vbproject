@@ -33,16 +33,16 @@ Partial Class Form2
         Me.LastNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NickNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.GenderDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GenderDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.EmailDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PhoneDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.AddressDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PhotoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ContactsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.UserManagementDataSet2 = New TestProject.UserManagementDataSet2()
-        Me.ContactsTableAdapter = New TestProject.UserManagementDataSet2TableAdapters.ContactsTableAdapter()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.ContactsTableAdapter = New TestProject.UserManagementDataSet2TableAdapters.ContactsTableAdapter()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ContactsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -52,28 +52,30 @@ Partial Class Form2
         '
         'Button1
         '
+        Me.Button1.BackColor = System.Drawing.SystemColors.Highlight
         Me.Button1.Location = New System.Drawing.Point(334, 83)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(161, 42)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Add Contacts"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Button2
         '
+        Me.Button2.BackColor = System.Drawing.SystemColors.Highlight
         Me.Button2.Location = New System.Drawing.Point(542, 83)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(157, 42)
         Me.Button2.TabIndex = 1
         Me.Button2.Text = "Show Contacts"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.DataGridView1)
         Me.Panel1.Location = New System.Drawing.Point(42, 145)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1089, 461)
+        Me.Panel1.Size = New System.Drawing.Size(1258, 461)
         Me.Panel1.TabIndex = 2
         '
         'DataGridView1
@@ -81,12 +83,12 @@ Partial Class Form2
         Me.DataGridView1.AllowUserToOrderColumns = True
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDDataGridViewTextBoxColumn, Me.FirstNameDataGridViewTextBoxColumn, Me.LastNameDataGridViewTextBoxColumn, Me.NickNameDataGridViewTextBoxColumn, Me.DataGridViewTextBoxColumn1, Me.GenderDataGridViewTextBoxColumn, Me.EmailDataGridViewTextBoxColumn, Me.PhoneDataGridViewTextBoxColumn, Me.AddressDataGridViewTextBoxColumn, Me.PhotoDataGridViewTextBoxColumn})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDDataGridViewTextBoxColumn, Me.FirstNameDataGridViewTextBoxColumn, Me.LastNameDataGridViewTextBoxColumn, Me.NickNameDataGridViewTextBoxColumn, Me.DataGridViewTextBoxColumn1, Me.GenderDataGridViewCheckBoxColumn, Me.EmailDataGridViewTextBoxColumn, Me.PhoneDataGridViewTextBoxColumn, Me.AddressDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.ContactsBindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(21, 16)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(1047, 401)
+        Me.DataGridView1.Size = New System.Drawing.Size(1234, 428)
         Me.DataGridView1.TabIndex = 0
         '
         'IDDataGridViewTextBoxColumn
@@ -119,11 +121,11 @@ Partial Class Form2
         Me.DataGridViewTextBoxColumn1.HeaderText = "Birthday"
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
         '
-        'GenderDataGridViewTextBoxColumn
+        'GenderDataGridViewCheckBoxColumn
         '
-        Me.GenderDataGridViewTextBoxColumn.DataPropertyName = "Gender"
-        Me.GenderDataGridViewTextBoxColumn.HeaderText = "Gender"
-        Me.GenderDataGridViewTextBoxColumn.Name = "GenderDataGridViewTextBoxColumn"
+        Me.GenderDataGridViewCheckBoxColumn.DataPropertyName = "Gender"
+        Me.GenderDataGridViewCheckBoxColumn.HeaderText = "Gender"
+        Me.GenderDataGridViewCheckBoxColumn.Name = "GenderDataGridViewCheckBoxColumn"
         '
         'EmailDataGridViewTextBoxColumn
         '
@@ -143,12 +145,6 @@ Partial Class Form2
         Me.AddressDataGridViewTextBoxColumn.HeaderText = "Address"
         Me.AddressDataGridViewTextBoxColumn.Name = "AddressDataGridViewTextBoxColumn"
         '
-        'PhotoDataGridViewTextBoxColumn
-        '
-        Me.PhotoDataGridViewTextBoxColumn.DataPropertyName = "Photo"
-        Me.PhotoDataGridViewTextBoxColumn.HeaderText = "Photo"
-        Me.PhotoDataGridViewTextBoxColumn.Name = "PhotoDataGridViewTextBoxColumn"
-        '
         'ContactsBindingSource
         '
         Me.ContactsBindingSource.DataMember = "Contacts"
@@ -159,38 +155,50 @@ Partial Class Form2
         Me.UserManagementDataSet2.DataSetName = "UserManagementDataSet2"
         Me.UserManagementDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'ContactsTableAdapter
-        '
-        Me.ContactsTableAdapter.ClearBeforeFill = True
-        '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(1, 1)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(1164, 59)
+        Me.PictureBox1.Size = New System.Drawing.Size(1343, 59)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = False
         '
         'Button3
         '
+        Me.Button3.BackColor = System.Drawing.SystemColors.Highlight
         Me.Button3.Location = New System.Drawing.Point(749, 83)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(163, 42)
         Me.Button3.TabIndex = 4
         Me.Button3.Text = "Export"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        'ContactsTableAdapter
+        '
+        Me.ContactsTableAdapter.ClearBeforeFill = True
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Location = New System.Drawing.Point(63, 67)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(1234, 72)
+        Me.GroupBox1.TabIndex = 6
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Menu"
         '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1164, 618)
+        Me.ClientSize = New System.Drawing.Size(1343, 772)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Name = "Form2"
         Me.Text = "Form2"
         Me.Panel1.ResumeLayout(False)
@@ -207,6 +215,8 @@ Partial Class Form2
     Friend WithEvents Panel1 As Panel
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents BirthDayDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Button3 As Button
     Friend WithEvents UserManagementDataSet2 As UserManagementDataSet2
     Friend WithEvents ContactsBindingSource As BindingSource
     Friend WithEvents ContactsTableAdapter As UserManagementDataSet2TableAdapters.ContactsTableAdapter
@@ -215,11 +225,9 @@ Partial Class Form2
     Friend WithEvents LastNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NickNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents GenderDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents GenderDataGridViewCheckBoxColumn As DataGridViewCheckBoxColumn
     Friend WithEvents EmailDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PhoneDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents AddressDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents PhotoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Button3 As Button
+    Friend WithEvents GroupBox1 As GroupBox
 End Class

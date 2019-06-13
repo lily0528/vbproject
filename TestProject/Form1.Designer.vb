@@ -30,8 +30,8 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Login = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -79,22 +79,16 @@ Partial Class Form1
         '
         'Login
         '
-        Me.Login.Location = New System.Drawing.Point(397, 229)
+        Me.Login.AllowDrop = True
+        Me.Login.CausesValidation = False
+        Me.Login.Image = CType(resources.GetObject("Login.Image"), System.Drawing.Image)
+        Me.Login.Location = New System.Drawing.Point(370, 238)
         Me.Login.Margin = New System.Windows.Forms.Padding(4)
         Me.Login.Name = "Login"
-        Me.Login.Size = New System.Drawing.Size(100, 28)
+        Me.Login.Size = New System.Drawing.Size(131, 47)
         Me.Login.TabIndex = 4
         Me.Login.Text = "Login"
         Me.Login.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(544, 229)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(105, 28)
-        Me.Button1.TabIndex = 5
-        Me.Button1.Text = "Exit"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'PictureBox1
         '
@@ -105,14 +99,27 @@ Partial Class Form1
         Me.PictureBox1.TabIndex = 6
         Me.PictureBox1.TabStop = False
         '
+        'Button1
+        '
+        Me.Button1.AllowDrop = True
+        Me.Button1.CausesValidation = False
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.Location = New System.Drawing.Point(529, 238)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(131, 47)
+        Me.Button1.TabIndex = 7
+        Me.Button1.Text = "Exit"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AcceptButton = Me.Login
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(764, 420)
-        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Login)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.Label2)
@@ -137,6 +144,6 @@ Partial Class Form1
     Friend WithEvents Label2 As Label
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Login As Button
-    Friend WithEvents Button1 As Button
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Button1 As Button
 End Class

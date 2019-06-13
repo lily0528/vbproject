@@ -31,7 +31,7 @@ Partial Class Form3
         Me.FirstName = New System.Windows.Forms.TextBox()
         Me.LastName = New System.Windows.Forms.TextBox()
         Me.NickName = New System.Windows.Forms.TextBox()
-        Me.Email = New System.Windows.Forms.TextBox()
+        Me.EmailAddress = New System.Windows.Forms.TextBox()
         Me.Address = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -46,6 +46,8 @@ Partial Class Form3
         Me.Label8 = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         CType(Me.Picture, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -88,7 +90,7 @@ Partial Class Form3
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(122, 331)
+        Me.Label5.Location = New System.Drawing.Point(122, 355)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(64, 17)
         Me.Label5.TabIndex = 4
@@ -115,37 +117,39 @@ Partial Class Form3
         Me.NickName.Size = New System.Drawing.Size(241, 22)
         Me.NickName.TabIndex = 7
         '
-        'Email
+        'EmailAddress
         '
-        Me.Email.Location = New System.Drawing.Point(211, 242)
-        Me.Email.Name = "Email"
-        Me.Email.Size = New System.Drawing.Size(241, 22)
-        Me.Email.TabIndex = 8
+        Me.EmailAddress.Location = New System.Drawing.Point(211, 242)
+        Me.EmailAddress.Name = "EmailAddress"
+        Me.EmailAddress.Size = New System.Drawing.Size(241, 22)
+        Me.EmailAddress.TabIndex = 8
         '
         'Address
         '
-        Me.Address.Location = New System.Drawing.Point(211, 325)
+        Me.Address.Location = New System.Drawing.Point(211, 349)
         Me.Address.Name = "Address"
         Me.Address.Size = New System.Drawing.Size(241, 22)
         Me.Address.TabIndex = 9
         '
         'Button1
         '
+        Me.Button1.BackColor = System.Drawing.SystemColors.Highlight
         Me.Button1.Location = New System.Drawing.Point(122, 390)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(135, 38)
         Me.Button1.TabIndex = 10
         Me.Button1.Text = "Register"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Button2
         '
+        Me.Button2.BackColor = System.Drawing.SystemColors.Highlight
         Me.Button2.Location = New System.Drawing.Point(351, 390)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(136, 38)
         Me.Button2.TabIndex = 11
         Me.Button2.Text = "Cancel"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'Picture
         '
@@ -244,11 +248,30 @@ Partial Class Form3
         Me.Button3.Text = "Upload Picture"
         Me.Button3.UseVisualStyleBackColor = True
         '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(208, 320)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(180, 17)
+        Me.Label9.TabIndex = 23
+        Me.Label9.Text = "For Example:204-229-9904"
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Location = New System.Drawing.Point(56, 13)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(732, 425)
+        Me.GroupBox1.TabIndex = 24
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Create Contacts"
+        '
         'Form3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.DateTimePicker1)
@@ -262,7 +285,7 @@ Partial Class Form3
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Address)
-        Me.Controls.Add(Me.Email)
+        Me.Controls.Add(Me.EmailAddress)
         Me.Controls.Add(Me.NickName)
         Me.Controls.Add(Me.LastName)
         Me.Controls.Add(Me.FirstName)
@@ -271,6 +294,7 @@ Partial Class Form3
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Name = "Form3"
         Me.Text = "Form3"
         CType(Me.Picture, System.ComponentModel.ISupportInitialize).EndInit()
@@ -287,7 +311,7 @@ Partial Class Form3
     Friend WithEvents FirstName As TextBox
     Friend WithEvents LastName As TextBox
     Friend WithEvents NickName As TextBox
-    Friend WithEvents Email As TextBox
+    Friend WithEvents EmailAddress As TextBox
     Friend WithEvents Address As TextBox
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
@@ -302,4 +326,6 @@ Partial Class Form3
     Friend WithEvents Label8 As Label
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents Button3 As Button
+    Friend WithEvents Label9 As Label
+    Friend WithEvents GroupBox1 As GroupBox
 End Class
