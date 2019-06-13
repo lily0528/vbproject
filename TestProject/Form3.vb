@@ -8,7 +8,9 @@ Public Class Form3
     Dim connection As OleDbConnection = New OleDbConnection
 
     Dim er, pho As Integer
-    Dim Photos1() As Byte
+    Dim a As New OpenFileDialog
+    Dim IfCheck As Boolean
+
 
     Private Sub Phone_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Phone.KeyPress
         If Asc(e.KeyChar) <> 10 Then
@@ -25,18 +27,14 @@ Public Class Form3
         End If
 
 
-        provider = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source="
-        dataFile = "D:\InterViewTest\TestProject\TestProject\UserManagement.mdb"
-        connString = provider & dataFile
-        connection.ConnectionString = connString
-        connection.Open()
         Dim str As String
-        str = "insert into Contacts(FirstName,LastName,NickName,BirthDay,Email,Phone,Address) values(?,?,?,?,?,?,?)"
+        str = "insert into Contacts(FirstName,LastName,NickName,BirthDay,Gender,Email,Phone,Address) values(?,?,?,?,?,?,?,?)"
         Dim cmd As OleDbCommand = New OleDbCommand(str, connection)
         cmd.Parameters.Add(New OleDbParameter("FirstName", FirstName.Text))
         cmd.Parameters.Add(New OleDbParameter("LastName", LastName.Text))
         cmd.Parameters.Add(New OleDbParameter("NickName", NickName.Text))
         cmd.Parameters.Add(New OleDbParameter("BirthDay", DateTimePicker1.Value))
+        cmd.Parameters.Add(New OleDbParameter("Gender", IfCheck))
         cmd.Parameters.Add(New OleDbParameter("Email", Email.Text))
         cmd.Parameters.Add(New OleDbParameter("Phone", Phone.Text))
         cmd.Parameters.Add(New OleDbParameter("Address", Address.Text))
@@ -61,7 +59,9 @@ Public Class Form3
     End Sub
 
     Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
-
+        If RadioButton1.Checked = True Then
+            IfCheck = 1
+        End If
     End Sub
 
     Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
@@ -73,14 +73,30 @@ Public Class Form3
 
     End Sub
 
-    Private Sub Button3_Click(Bysender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(Bysender As Object, e As EventArgs)
         'If OpenFileDialog.ShowDialog = System.Windows.Forms.DialogResult.OK Then
 
         'End If
     End Sub
 
+    Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton2.CheckedChanged
+        If RadioButton2.Checked = True Then
+            IfCheck = 0
+
+        End If
+    End Sub
+
+    Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles Button3.Click
+        Me.OpenFileDialog1.ShowDialog()
+        Picture.Image = Image.FromFile(OpenFileDialog1.FileName)
+        'Photo = OpenFileDialog1.SafeFileName
+    End Sub
 
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        pho = 0
+        provider = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source="
+        dataFile = "D:\InterViewTest\TestProject\TestProject\UserManagement.mdb"
+        connString = provider & dataFile
+        connection.ConnectionString = connString
+        connection.Open()
     End Sub
 End Class

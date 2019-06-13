@@ -35,8 +35,7 @@ Partial Class Form3
         Me.Address = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Picture = New System.Windows.Forms.PictureBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Lable7 = New System.Windows.Forms.Label()
         Me.Phone = New System.Windows.Forms.TextBox()
@@ -45,7 +44,9 @@ Partial Class Form3
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Label8 = New System.Windows.Forms.Label()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.Button3 = New System.Windows.Forms.Button()
+        CType(Me.Picture, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -146,24 +147,16 @@ Partial Class Form3
         Me.Button2.Text = "Cancel"
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'PictureBox1
+        'Picture
         '
-        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(541, 69)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(221, 199)
-        Me.PictureBox1.TabIndex = 12
-        Me.PictureBox1.TabStop = False
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(560, 286)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(168, 42)
-        Me.Button3.TabIndex = 13
-        Me.Button3.Text = "Select Picture"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.Picture.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.Picture.Image = CType(resources.GetObject("Picture.Image"), System.Drawing.Image)
+        Me.Picture.Location = New System.Drawing.Point(541, 69)
+        Me.Picture.Name = "Picture"
+        Me.Picture.Size = New System.Drawing.Size(200, 236)
+        Me.Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Picture.TabIndex = 12
+        Me.Picture.TabStop = False
         '
         'Label6
         '
@@ -238,11 +231,25 @@ Partial Class Form3
         Me.Label8.TabIndex = 21
         Me.Label8.Text = "Date of Birth:"
         '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(541, 312)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(128, 35)
+        Me.Button3.TabIndex = 22
+        Me.Button3.Text = "Upload Picture"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'Form3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.RadioButton2)
@@ -251,8 +258,7 @@ Partial Class Form3
         Me.Controls.Add(Me.Phone)
         Me.Controls.Add(Me.Lable7)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.Picture)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Address)
@@ -267,7 +273,7 @@ Partial Class Form3
         Me.Controls.Add(Me.Label1)
         Me.Name = "Form3"
         Me.Text = "Form3"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Picture, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -285,8 +291,7 @@ Partial Class Form3
     Friend WithEvents Address As TextBox
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Button3 As Button
+    Friend WithEvents Picture As PictureBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Lable7 As Label
     Friend WithEvents Phone As TextBox
@@ -295,4 +300,6 @@ Partial Class Form3
     Friend WithEvents RadioButton2 As RadioButton
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents Label8 As Label
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents Button3 As Button
 End Class
