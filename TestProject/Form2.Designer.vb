@@ -56,7 +56,7 @@ Partial Class Form2
         '
         Me.Button1.BackColor = System.Drawing.SystemColors.Highlight
         Me.Button1.ForeColor = System.Drawing.SystemColors.HighlightText
-        Me.Button1.Location = New System.Drawing.Point(334, 113)
+        Me.Button1.Location = New System.Drawing.Point(373, 113)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(161, 50)
         Me.Button1.TabIndex = 0
@@ -67,7 +67,7 @@ Partial Class Form2
         '
         Me.Button2.BackColor = System.Drawing.SystemColors.Highlight
         Me.Button2.ForeColor = System.Drawing.SystemColors.HighlightText
-        Me.Button2.Location = New System.Drawing.Point(542, 113)
+        Me.Button2.Location = New System.Drawing.Point(581, 113)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(160, 50)
         Me.Button2.TabIndex = 1
@@ -79,7 +79,7 @@ Partial Class Form2
         Me.Panel1.Controls.Add(Me.DataGridView1)
         Me.Panel1.Location = New System.Drawing.Point(42, 185)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1258, 534)
+        Me.Panel1.Size = New System.Drawing.Size(1313, 534)
         Me.Panel1.TabIndex = 2
         '
         'DataGridView1
@@ -89,10 +89,10 @@ Partial Class Form2
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDDataGridViewTextBoxColumn, Me.FirstNameDataGridViewTextBoxColumn, Me.LastNameDataGridViewTextBoxColumn, Me.NickNameDataGridViewTextBoxColumn, Me.DataGridViewTextBoxColumn1, Me.GenderDataGridViewCheckBoxColumn, Me.EmailDataGridViewTextBoxColumn, Me.PhoneDataGridViewTextBoxColumn, Me.AddressDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.ContactsBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(24, 3)
+        Me.DataGridView1.Location = New System.Drawing.Point(21, 3)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(1231, 555)
+        Me.DataGridView1.Size = New System.Drawing.Size(1281, 555)
         Me.DataGridView1.TabIndex = 0
         '
         'IDDataGridViewTextBoxColumn
@@ -164,7 +164,7 @@ Partial Class Form2
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(1, 1)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(1343, 68)
+        Me.PictureBox1.Size = New System.Drawing.Size(1413, 68)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = False
@@ -173,7 +173,7 @@ Partial Class Form2
         '
         Me.Button3.BackColor = System.Drawing.SystemColors.Highlight
         Me.Button3.ForeColor = System.Drawing.SystemColors.HighlightText
-        Me.Button3.Location = New System.Drawing.Point(749, 113)
+        Me.Button3.Location = New System.Drawing.Point(788, 113)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(166, 50)
         Me.Button3.TabIndex = 4
@@ -188,7 +188,7 @@ Partial Class Form2
         '
         Me.GroupBox1.Location = New System.Drawing.Point(63, 86)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1234, 93)
+        Me.GroupBox1.Size = New System.Drawing.Size(1281, 93)
         Me.GroupBox1.TabIndex = 10
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Menu"
@@ -196,7 +196,7 @@ Partial Class Form2
         'PictureBox2
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(1283, 24)
+        Me.PictureBox2.Location = New System.Drawing.Point(1356, 24)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(35, 24)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -207,7 +207,7 @@ Partial Class Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1343, 772)
+        Me.ClientSize = New System.Drawing.Size(1414, 811)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.PictureBox1)

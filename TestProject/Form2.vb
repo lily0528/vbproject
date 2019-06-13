@@ -4,39 +4,38 @@ Imports Excel = Microsoft.Office.Interop.Excel
 
 
 Public Class Form2
-    Dim connString As String
-    Dim connection As OleDbConnection = New OleDbConnection
+  
     Dim ExcelApp As Microsoft.Office.Interop.Excel.Application
     Dim ExcelWorkbook As Microsoft.Office.Interop.Excel.Workbook
     Dim ExcelWorksheet As Microsoft.Office.Interop.Excel.Worksheet
     Dim ItemVaue As Object = System.Reflection.Missing.Value
     Dim i As Integer
     Dim j As Integer
+
+    Dim connection As OleDbConnection
+    Dim data As OleDbDataAdapter
+    Dim dataset As New DataSet
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Form3.Show()
     End Sub
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'UserManagementDataSet2.Contacts' table. You can move, or remove it, as needed.
-        'Me.ContactsTableAdapter.Fill(Me.UserManagementDataSet2.Contacts)
-
+        Me.ContactsTableAdapter.Fill(Me.UserManagementDataSet2.Contacts)
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        'Me.DataGridView1.DataSource = Nothing
-        'Me.ContactsTableAdapter.Fill(Me.UserManagementDataSet2.Contacts)
-        'Me.DataGridView1.DataSource = Me.ContactsBindingSource
-        'Me.DataGridView1.Refresh()
         'Me.ContactsTableAdapter.Fill(Me.UserManagementDataSet2.Contacts)
         Try
-            If connection.State = ConnectionState.Closed Then
-                connection.Open()
-            End If
-            Dim search As New ContactsTableAdapte("select * from contacts", connection)
-             
-
+            Dim provider = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source="
+            Dim dataFile = "D:\InterViewTest\TestProject\TestProject\UserManagement.mdb"
+            connection = New OleDbConnection(provider & dataFile)
+            data = New OleDbDataAdapter("Select * from contacts", connection)
+            data.Fill(dataset, "contacts")
+            DataGridView1.DataSource = dataset.Tables(0)
         Catch ex As Exception
-
+            MsgBox(ex.Message)
         End Try
     End Sub
 
