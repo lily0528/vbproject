@@ -12,7 +12,7 @@ Public Class Form3
     Dim IfCheck As Boolean
 
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         If FirstName.Text = "" Or LastName.Text = "" Or EmailAddress.Text = "" Or Address.Text = "" Or Phone.Text = "" Then
             MsgBox("Please fill those details!")
         End If
@@ -45,9 +45,6 @@ Public Class Form3
             cmd.Dispose()
             connection.Close()
             Form2.ContactsBindingSource.EndEdit()
-
-
-
             'Clear text
             FirstName.Clear()
             LastName.Clear()
@@ -60,7 +57,7 @@ Public Class Form3
         End Try
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
         Me.Close()
         Form2.Show()
     End Sub
@@ -81,11 +78,10 @@ Public Class Form3
     Private Sub Form3_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         connection.Close()
         Form2.Show()
-
     End Sub
 
 
-    Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click_1(sender As Object, e As EventArgs)
         Try
             Dim piclocation As String
             a.Filter = Nothing
@@ -127,6 +123,8 @@ Public Class Form3
         Email = Regex.IsMatch(EmailAddress.Text, "^([0-9a-zA-Z]([-\.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$", RegexOptions.IgnoreCase)
         If Not Email Then
             MsgBox("E-mail address is invalid!")
+            EmailAddress.Clear()
+            EmailAddress.Focus()
         End If
     End Sub
 
@@ -146,4 +144,5 @@ Public Class Form3
             MessageBox.Show("Age range must be 18 and above!")
         End If
     End Sub
+
 End Class

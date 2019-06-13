@@ -1,7 +1,11 @@
-﻿Imports System.IO
+﻿Imports System.Data.OleDb
+Imports System.IO
 Imports Excel = Microsoft.Office.Interop.Excel
 
+
 Public Class Form2
+    Dim connString As String
+    Dim connection As OleDbConnection = New OleDbConnection
     Dim ExcelApp As Microsoft.Office.Interop.Excel.Application
     Dim ExcelWorkbook As Microsoft.Office.Interop.Excel.Workbook
     Dim ExcelWorksheet As Microsoft.Office.Interop.Excel.Worksheet
@@ -19,7 +23,21 @@ Public Class Form2
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Me.ContactsTableAdapter.Fill(Me.UserManagementDataSet2.Contacts)
+        'Me.DataGridView1.DataSource = Nothing
+        'Me.ContactsTableAdapter.Fill(Me.UserManagementDataSet2.Contacts)
+        'Me.DataGridView1.DataSource = Me.ContactsBindingSource
+        'Me.DataGridView1.Refresh()
+        'Me.ContactsTableAdapter.Fill(Me.UserManagementDataSet2.Contacts)
+        Try
+            If connection.State = ConnectionState.Closed Then
+                connection.Open()
+            End If
+            Dim search As New ContactsTableAdapte("select * from contacts", connection)
+             
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -44,15 +62,15 @@ Public Class Form2
             MsgBox("Some problems be occurred!", MsgBoxStyle.Critical, "Error")
         End Try
 
-        releaseObject(ExcelApp)
-        releaseObject(ExcelWorkbook)
-        releaseObject(ExcelWorksheet)
+        ReleaseObject(ExcelApp)
+        ReleaseObject(ExcelWorkbook)
+        ReleaseObject(ExcelWorksheet)
 
         MsgBox("You could find this file by D:\InterViewTest\TestProject\data\data.xlsx")
         Button3.Text = "Export"
     End Sub
 
-    Private Sub releaseObject(ByVal obj As Object)
+    Private Sub ReleaseObject(ByVal obj As Object)
         Try
             System.Runtime.InteropServices.Marshal.ReleaseComObject(obj)
             obj = Nothing
@@ -63,5 +81,7 @@ Public Class Form2
         End Try
     End Sub
 
-
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        Me.Close()
+    End Sub
 End Class
